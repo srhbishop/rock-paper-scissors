@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+    color: #01FFc3;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    padding: 4px;
+}
+
+h2 {
+    padding: 4px;
+}
+
+header p {
+    padding: 10px;
+    font-style: italic;
+}
+
+
+.user-choices button {
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #7122FA;
+    border: none;
+    width: 150px;
+    transition: .5s ease-in-out;
+    border-radius: 2px;
+}
+
+.user-choices button:hover {
+    color: #01FFc3;
+}
+.results {
+    display: flex;
+}
+
+.results p {
+    padding: 25px;
+}
+
+.winner {
+    font-size: 2rem;
+    font-weight: bold;
+}
