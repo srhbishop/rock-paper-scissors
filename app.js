@@ -8,11 +8,13 @@ const userResult = document.querySelector('.user-result');
 const computerResult = document.querySelector('.computer-result');
 const roundResult = document.querySelector('.round-result');
 
+const userScorePrint = document.querySelector('.user-score-print');
+const computerScorePrint = document.querySelector('.computer-score-print');
+
 // 0 is rock, 1 is paper, 2 is scissors
 
 rock.addEventListener('click', function() {
     computerChoice = Math.floor(Math.random() * 3);
-    console.log(computerChoice);
 
     userResult.innerText = 'You chose rock';
     if(computerChoice === 0) {
@@ -25,6 +27,8 @@ rock.addEventListener('click', function() {
         computerResult.innerText = 'Computer chose scissors';
         roundResult.innerText = 'You win!';
     }
+
+    updateScore();
 })
 
 paper.addEventListener('click', function() {
@@ -42,6 +46,8 @@ paper.addEventListener('click', function() {
         computerResult.innerText = 'Computer chose scissors';
         roundResult.innerText = 'Computer wins';
     }
+
+    updateScore();
 })
 
 scissors.addEventListener('click', function() {
@@ -59,4 +65,23 @@ scissors.addEventListener('click', function() {
         computerResult.innerText = 'Computer chose scissors';
         roundResult.innerText = 'It\'s a tie!';
     }
-})
+
+    updateScore();
+});
+
+let userScore = 0;
+let computerScore = 0;
+
+function updateScore() {
+    if(roundResult.innerText === 'You win!') {
+        userScore++;
+    } else if (roundResult.innerText === 'Computer wins') {
+        computerScore++;
+    } else {
+    }
+    userScorePrint.innerText = userScore;
+    computerScorePrint.innerText = computerScore;
+}
+
+
+
